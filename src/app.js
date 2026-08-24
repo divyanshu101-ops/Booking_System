@@ -1,6 +1,5 @@
 import express from "express";
-import showsRouter from "./routes/showsRoutes.js";
-const port = 3000;
+import showsRouter from "../routes/showsRoutes.js";
 const app = express();
 
 // Simple observability middleware
@@ -11,6 +10,4 @@ app.use((req, res, next) => {
 
 app.use("/shows", showsRouter);
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+export default app;
