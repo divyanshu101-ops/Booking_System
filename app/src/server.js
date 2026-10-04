@@ -6,9 +6,9 @@ const app = express();
 app.use(express.json());
 
 app.get('/health', async (req, res) => {
-    await pool.query('SELECT 1');
-    await redis.ping();
-    res.json({ status: 'ok' });
+  await pool.query('SELECT 1');
+  await redis.ping();
+  res.json({ status: 'ok' });
 });
 
 app.listen(3000, () => console.log('app up on 3000'));
